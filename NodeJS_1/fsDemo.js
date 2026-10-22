@@ -32,4 +32,31 @@ const readFile = async() => {
         console.error(error);
     }
 }
+
+
+
+
+//wruteFile()
+
+const writeFile = async() => {
+    try{
+        await fs.writeFile('./test.txt', 'Hello World!');
+        console.log('file written to')
+    }catch(error) {
+        console.error(error);
+    }
+}
+
+// append
+const appendFile = async() => {
+    try{
+        await fs.appendFile('./test.txt', '\nTesting append file');
+        console.log('file appended to') 
+    }catch(error) {
+        console.error(error);
+    }
+}
+
+writeFile();
+appendFile();
 readFile();
