@@ -20,6 +20,7 @@ function App() {
     },
     { id: 3, text: "Food Shopping", day: "Feb 5th at 2:00pm", reminder: false },
   ]);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
@@ -44,9 +45,10 @@ function App() {
     <div className="container">
       <Header
         title="Task Tracker"
-        onAdd={() => console.log("Add button clicked")}
+        showAdd={showAddTask}
+        onAdd={() => setShowAddTask(!showAddTask)}
       />
-      <AddTask onAdd={addTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
