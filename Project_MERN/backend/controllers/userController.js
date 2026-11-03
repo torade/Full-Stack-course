@@ -64,7 +64,11 @@ const loginUser = async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getMe = async (req, res) => {
-  res.status(200).json({ message: 'Get me' })
+  res.status(200).json({
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+  })
 }
 
 module.exports = {
