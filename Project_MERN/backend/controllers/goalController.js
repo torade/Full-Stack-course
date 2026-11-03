@@ -37,6 +37,11 @@ const updateGoal = async (req, res) => {
     throw new Error("Goal not found");
   }
 
+  if (goal.user.toString() !== req.user._id.toString()) {
+    res.status(403);
+    throw new Error("Not authorized to update this goal");
+  }
+
   const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -54,6 +59,11 @@ const deleteGoal = async (req, res) => {
   if (!goal) {
     res.status(404);
     throw new Error("Goal not found");
+  }
+
+  if (goal.user.toString() !== req.user._id.toString()) {
+    res.status(403);
+    throw new Error("Not authorized to delete this goal");
   }
 
   await Goal.findByIdAndDelete(req.params.id);
