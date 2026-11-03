@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs')
 const User = require('../models/userModel')
+const generateToken = require('../utils/generateToken')
 
 // @desc    Register a new user
 // @route   POST /api/users
@@ -31,6 +32,7 @@ const registerUser = async (req, res) => {
       _id: user.id,
       name: user.name,
       email: user.email,
+      token: generateToken(user.id),
     })
   } else {
     res.status(400)
@@ -50,6 +52,7 @@ const loginUser = async (req, res) => {
       _id: user.id,
       name: user.name,
       email: user.email,
+      token: generateToken(user.id),
     })
   } else {
     res.status(401)
