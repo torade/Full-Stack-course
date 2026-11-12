@@ -63,9 +63,11 @@ function GoalForm() {
           <label htmlFor="dueDate">Due date (optional)</label>
           <input
             type="date"
+            lang="fi-FI"
             name="dueDate"
             id="dueDate"
             value={dueDate}
+            onClick={(event) => event.currentTarget.showPicker?.()}
             onChange={(event) => setDueDate(event.target.value)}
           />
         </div>

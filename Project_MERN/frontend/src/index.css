@@ -108,6 +108,13 @@ h3 {
   background: none;
 }
 
+.goal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .goal-progress {
   width: 70%;
   margin: 30px auto;
