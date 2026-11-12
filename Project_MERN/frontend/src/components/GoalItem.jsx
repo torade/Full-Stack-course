@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
-import { deleteGoal } from '../features/goals/goalSlice'
+import { deleteGoal, updateGoal } from '../features/goals/goalSlice'
 
 function GoalItem({ goal }) {
   const dispatch = useDispatch()
@@ -18,6 +18,19 @@ function GoalItem({ goal }) {
         <p>Due date: {new Date(goal.dueDate).toLocaleDateString()}</p>
       )}
       <p>Status: {goal.completed ? 'Completed' : 'Active'}</p>
+      <button
+        className="btn btn-reverse"
+        onClick={() =>
+          dispatch(
+            updateGoal({
+              goalId: goal._id,
+              goalData: { completed: !goal.completed },
+            }),
+          )
+        }
+      >
+        {goal.completed ? 'Mark active' : 'Complete'}
+      </button>
     </div>
   )
 }
