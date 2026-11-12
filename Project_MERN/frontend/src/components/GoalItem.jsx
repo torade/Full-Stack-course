@@ -12,6 +12,12 @@ function GoalItem({ goal }) {
       </button>
       <div>{new Date(goal.createdAt).toLocaleString('en-US')}</div>
       <h2>{goal.text}</h2>
+      <p>Category: {goal.category}</p>
+      <p>Priority: {goal.priority}</p>
+      {goal.dueDate && (
+        <p>Due date: {new Date(goal.dueDate).toLocaleDateString()}</p>
+      )}
+      <p>Status: {goal.completed ? 'Completed' : 'Active'}</p>
     </div>
   )
 }
