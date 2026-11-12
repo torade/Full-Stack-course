@@ -47,7 +47,7 @@ function GoalItem({ goal }) {
             className="goal-checkbox"
             type="checkbox"
             checked={goal.completed}
-            aria-label={`Mark ${goal.text} as completed`}
+            aria-label={`Mark task ${goal.text} as completed`}
             onClick={(event) => event.stopPropagation()}
             onChange={() =>
               dispatch(
@@ -59,7 +59,9 @@ function GoalItem({ goal }) {
             }
           />
           <h2 className="goal-title">{goal.text}</h2>
-          <span className="goal-label">{goal.priority}</span>
+          <span className={`goal-label goal-priority ${goal.priority.toLowerCase()}`}>
+            {goal.priority}
+          </span>
           <span className="goal-label">{goal.category}</span>
           <span className="goal-date">
             {goal.dueDate && formatDate(goal.dueDate)}
@@ -81,10 +83,10 @@ function GoalItem({ goal }) {
             className="goal-modal"
             onClick={(event) => event.stopPropagation()}
           >
-            <h2>Edit goal</h2>
+            <h2>Edit task</h2>
             <form onSubmit={onSubmit}>
               <div className="form-group">
-                <label htmlFor={`${goal._id}-text`}>Goal</label>
+                <label htmlFor={`${goal._id}-text`}>Task</label>
                 <input
                   type="text"
                   id={`${goal._id}-text`}

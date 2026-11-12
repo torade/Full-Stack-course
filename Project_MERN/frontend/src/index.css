@@ -75,6 +75,10 @@ h3 {
   margin-right: 5px;
 }
 
+.header .user-name {
+  font-weight: 600;
+}
+
 .heading {
   font-size: 2rem;
   font-weight: 700;
@@ -134,19 +138,34 @@ h3 {
   white-space: nowrap;
 }
 
+.goal-priority.low {
+  color: #07632d;
+  background-color: #e3ffd7;
+}
+
+.goal-priority.medium {
+  color: #7e4d08;
+  background-color: #fff3c0;
+}
+
+.goal-priority.high {
+  color: #80231d;
+  background-color: #ffdcdb;
+}
+
 .goal-date {
   min-height: 1.4rem;
   font-size: 0.9rem;
 }
 
 .goal-status.active {
-  color: #7c4a03;
-  background-color: #fdf3d2;
+  color: #7e4d08;
+  background-color: #fff3c0;
 }
 
 .goal-status.completed {
-  color: #1d643b;
-  background-color: #dff4e5;
+  color: #07632d;
+  background-color: #e3ffd7;
 }
 
 .goal-actions {

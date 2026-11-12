@@ -50,18 +50,13 @@ function Dashboard() {
 
   return (
     <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
-      </section>
-
       <GoalForm />
 
       {goals.length > 0 && <GoalProgress goals={goals} />}
 
       {goals.length > 0 && (
         <section className="goal-filters">
-          <h3>Filter goals</h3>
+          <h3>Filter tasks</h3>
           <div className="form-group">
             <label htmlFor="status">Status</label>
             <select
@@ -115,9 +110,9 @@ function Dashboard() {
             ))}
           </div>
         ) : goals.length > 0 ? (
-          <h3>No goals match these filters</h3>
+          <h3>No tasks match these filters</h3>
         ) : (
-          <h3>You have not set any goals</h3>
+          <h3>You have not set any tasks</h3>
         )}
       </section>
     </>

@@ -6,7 +6,7 @@ function GoalProgress({ goals }) {
     <section className="goal-progress">
       <h3>Study progress</h3>
       <p>
-        {completedGoals} of {goals.length} goals completed
+        {completedGoals} of {goals.length} tasks completed
       </p>
       <div className="progress-bar">
         <div className="progress-fill" style={{ width: `${progress}%` }}></div>
