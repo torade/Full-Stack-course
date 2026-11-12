@@ -4,7 +4,7 @@ function GoalProgress({ goals }) {
 
   return (
     <section className="goal-progress">
-      <h3>Study progress</h3>
+      <h3>Progress</h3>
       <p>
         {completedGoals} of {goals.length} tasks completed
       </p>
