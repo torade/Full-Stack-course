@@ -24,7 +24,7 @@ function Dashboard() {
     }
   }, [user, navigate, dispatch])
 
-  if (isLoading) {
+  if (isLoading && goals.length === 0) {
     return <Spinner />
   }
 
