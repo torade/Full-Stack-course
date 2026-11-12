@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import GoalForm from '../components/GoalForm'
 import GoalItem from '../components/GoalItem'
+import GoalProgress from '../components/GoalProgress'
 import Spinner from '../components/Spinner'
 import { getGoals } from '../features/goals/goalSlice'
 
@@ -32,6 +33,8 @@ function Dashboard() {
       </section>
 
       <GoalForm />
+
+      {goals.length > 0 && <GoalProgress goals={goals} />}
 
       <section className="content">
         {goals.length > 0 ? (
