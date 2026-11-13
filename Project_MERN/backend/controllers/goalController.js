@@ -13,13 +13,18 @@ const getGoals = async (req, res) => {
 // @route   POST /api/goals
 // @access  Private
 const setGoal = async (req, res) => {
-  if (!req.body.text) {
+  const { text, category, priority, dueDate } = req.body;
+
+  if (!text) {
     res.status(400);
     throw new Error("Please add a text field");
   }
 
   const goal = await Goal.create({
-    text: req.body.text,
+    text,
+    category,
+    priority,
+    dueDate,
     user: req.user._id,
   });
 
