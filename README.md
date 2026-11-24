@@ -1,6 +1,6 @@
 #### Name: Adelina Stan
 #### Learning Diary: Learning Diary.docx
-#### Link to a video of project running: https://youtu.be/4ZWEuziiNRE  
+#### Link to a video of project running: https://www.youtube.com/watch?v=4ZWEuziiNRE
 
 This repository contains all of the coursework. The project is located inside `Project_MERN` forlder.
 
